@@ -67,3 +67,4 @@ test/selenium/screenshots/*
 
 # logging
 logs/*.log*
+/.vagrant/

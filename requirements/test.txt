@@ -1,5 +1,5 @@
--r base.txt
--r test-acceptance.txt
+# -r base.txt
+# -r test-acceptance.txt
 
 coverage==4.0.2
 django-nose==1.4.1

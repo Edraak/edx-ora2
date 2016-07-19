@@ -1,6 +1,6 @@
 # Include the requirements we're caching as "wheel" archives
 # to speed up the test builds.
--r wheels.txt
+# -r wheels.txt
 
 # edX Internal Requirements
 git+https://github.com/edx/XBlock.git@xblock-0.4.1#egg=XBlock==0.4.1

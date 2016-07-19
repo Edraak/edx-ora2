@@ -1,0 +1,9 @@
+ora:
+  build: .
+  command: bash scripts/workbench.sh 0.0.0.0:9090
+  working_dir: "/code/"
+  volumes:
+    - ".:/code/"
+  ports:
+    - "9090:9090"
+    - "9091:9091"

@@ -17,6 +17,8 @@ urlpatterns = patterns(
     # Django built-in
     url(r'^admin/', include(admin.site.urls)),
 
+    url(r'^/?resource/(?P<block_type>[^/]+)/(?P<resource>.*)$', 'openassessment.views.package_resource'),
+
     # Provided by XBlock
     url(r'^/?', include(workbench.urls)),
 
