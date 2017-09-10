@@ -47,7 +47,7 @@ install-sys-requirements: install-system install-node
 install-dev:
 	pip install -q -r requirements/dev.txt
 
-install: install-wheels install-python install-js install-nltk-data install-test install-dev javascript sass
+install: install-wheels install-python install-js install-test install-nltk-data install-dev javascript sass
 
 quality:
 	jshint openassessment/xblock/static/js/src -c .jshintrc --verbose
