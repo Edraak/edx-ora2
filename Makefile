@@ -55,7 +55,7 @@ quality:
 	./scripts/run-pep8.sh
 	./scripts/run-pylint.sh
 
-test: quality test-python test-js
+test: test-python test-js quality
 
 test-python:
 	./scripts/test-python.sh
