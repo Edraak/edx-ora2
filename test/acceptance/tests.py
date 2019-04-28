@@ -3,23 +3,23 @@ UI-level acceptance tests for OpenAssessment.
 """
 from __future__ import absolute_import
 
-import ddt
-import os
-import unittest
-import time
 from functools import wraps
+import os
+import time
+import unittest
+
+from bok_choy.promise import BrokenPromise, EmptyPromise
+from bok_choy.web_app_test import WebAppTest
+import ddt
+from nose.plugins.attrib import attr
 from pyinstrument import Profiler
 
 from acceptance.auto_auth import AutoAuthPage
-from acceptance.pages import (
-    SubmissionPage, AssessmentPage, GradePage, StaffAreaPage
-)
-from bok_choy.web_app_test import WebAppTest
-from bok_choy.promise import BrokenPromise, EmptyPromise
-from nose.plugins.attrib import attr
+from acceptance.pages import AssessmentPage, GradePage, StaffAreaPage, SubmissionPage
 
 # This value is generally used in jenkins, but not locally
 PROFILING_ENABLED = os.environ.get('ORA_PROFILING_ENABLED', False)
+
 
 def retry(tries=2, delay=4, backoff=2):
     """
@@ -299,9 +299,6 @@ class SelfAssessmentTest(OpenAssessmentTest):
     def test_self_assessment(self):
         # Submit a response
         self.do_self_assessment()
-
-        # Check browser scrolled back to top of assessment
-        self.assertTrue(self.self_asmnt_page.is_on_top)
 
     @retry()
     @attr('acceptance')
@@ -647,8 +644,8 @@ class StaffAreaTest(OpenAssessmentTest):
             self.staff_area_page.learner_final_score_table_headers
         )
         self.assertEquals(
-            ['Poor - 0 points', 'Fair',
-             'Fair - 1 point', 'Good'],
+            [u'Poor - 0 points', u'Fair',
+             u'Fair - 1 point', u'Good'],
             self.staff_area_page.learner_final_score_table_values
         )
 
@@ -741,10 +738,16 @@ class FileUploadTest(OpenAssessmentTest):
         self.assertTrue(self.submission_page.has_file_error)
 
         # trying to upload a acceptable file
-        self.submission_page.visit().select_file(os.path.dirname(os.path.realpath(__file__)) + '/README.rst')
+        readme = os.path.dirname(os.path.realpath(__file__)) + '/README.rst'
+        self.submission_page.visit().select_file(readme)
         self.assertFalse(self.submission_page.has_file_error)
+        self.assertTrue(self.submission_page.upload_file_button_is_disabled)
+
+        self.submission_page.add_file_description(0, 'file description 1')
+        self.assertTrue(self.submission_page.upload_file_button_is_enabled)
+
         self.submission_page.upload_file()
-        self.assertTrue(self.submission_page.has_file_uploaded)
+        self.assertTrue(self.submission_page.have_files_uploaded)
 
 
 class FullWorkflowMixin(object):
@@ -792,14 +795,20 @@ class FullWorkflowMixin(object):
         username, email = self.do_submission()
         EmptyPromise(self.submission_page.button(".step--student-training").is_focused(),
                      "Student training button should be focused")
+        self.submission_page.confirm_feedback_text('Your Response Complete')
+        self.submission_page.confirm_feedback_text('Learn to Assess Responses In Progress (1 of 2)')
 
         self.do_training()
         EmptyPromise(self.submission_page.button(".step--self-assessment").is_focused(),
                      "Self assessment button should be focused")
+        self.submission_page.confirm_feedback_text('Learn to Assess Responses Complete')
+        self.submission_page.confirm_feedback_text('Assess Your Response In Progress')
 
         self.submit_self_assessment(self.SELF_ASSESSMENT)
         EmptyPromise(self.submission_page.button(".step--grade").is_focused(),
                      "Grade button should be focused")
+        self.submission_page.confirm_feedback_text('Assess Your Response Complete')
+        self.submission_page.confirm_feedback_text('Assess Peers In Progress (1 of 1)')
 
         return username, email
 
@@ -1059,8 +1068,8 @@ class FullWorkflowOverrideTest(OpenAssessmentTest, FullWorkflowMixin):
             self.staff_area_page.learner_final_score_table_headers
         )
         self.assertEquals(
-            ['Poor - 0 points', 'Waiting for peer reviews',
-             'Fair - 1 point', 'Waiting for peer reviews'],
+            [u'Poor - 0 points', u'Waiting for peer reviews',
+             u'Fair - 1 point', u'Waiting for peer reviews'],
             self.staff_area_page.learner_final_score_table_values
         )
         self.verify_grade_entries(

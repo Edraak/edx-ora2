@@ -2,20 +2,15 @@
 Public interface for self-assessment.
 """
 import logging
+
 from django.db import DatabaseError, transaction
+
 from dogapi import dog_stats_api
-
-from submissions.api import get_submission_and_student, SubmissionNotFoundError
-from openassessment.assessment.serializers import (
-    InvalidRubric, full_assessment_dict, rubric_from_dict, serialize_assessments
-)
-from openassessment.assessment.models import (
-    Assessment, AssessmentPart, InvalidRubricSelection
-)
-from openassessment.assessment.errors import (
-    SelfAssessmentRequestError, SelfAssessmentInternalError
-)
-
+from openassessment.assessment.errors import SelfAssessmentInternalError, SelfAssessmentRequestError
+from openassessment.assessment.models import Assessment, AssessmentPart, InvalidRubricSelection
+from openassessment.assessment.serializers import (InvalidRubric, full_assessment_dict, rubric_from_dict,
+                                                   serialize_assessments)
+from submissions.api import SubmissionNotFoundError, get_submission_and_student
 
 # Assessments are tagged as "self-evaluation"
 SELF_TYPE = "SE"
@@ -23,7 +18,7 @@ SELF_TYPE = "SE"
 logger = logging.getLogger("openassessment.assessment.api.self")
 
 
-def submitter_is_finished(submission_uuid, self_requirements):
+def submitter_is_finished(submission_uuid, self_requirements):  # pylint: disable=unused-argument
     """
     Check whether a self-assessment has been completed for a submission.
 
@@ -62,7 +57,7 @@ def assessment_is_finished(submission_uuid, self_requirements):
     return submitter_is_finished(submission_uuid, self_requirements)
 
 
-def get_score(submission_uuid, self_requirements):
+def get_score(submission_uuid, self_requirements):  # pylint: disable=unused-argument
     """
     Get the score for this particular assessment.
 
@@ -105,7 +100,8 @@ def create_assessment(
 
     Args:
         submission_uuid (str): The unique identifier for the submission being assessed.
-        user_id (str): The ID of the user creating the assessment.  This must match the ID of the user who made the submission.
+        user_id (str): The ID of the user creating the assessment. 
+                       This must match the ID of the user who made the submission.
         options_selected (dict): Mapping of rubric criterion names to option values selected.
         criterion_feedback (dict): Dictionary mapping criterion names to the
             free-form text feedback the user gave for the criterion.
