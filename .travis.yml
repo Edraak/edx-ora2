@@ -4,7 +4,7 @@ addons:
     - nodejs
 language: python
 sudo: false
-dist: precise
+dist: xenial
 python:
   - "2.7"
 env:
@@ -18,6 +18,7 @@ matrix:
       env: TOXENV=js
 before_install:
   - "pip install -U pip"
+  - sudo rm -f /etc/boto.cfg
 cache:
     directories:
         - $HOME/.cache/pip
