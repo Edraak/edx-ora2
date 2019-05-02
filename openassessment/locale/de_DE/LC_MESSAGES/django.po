@@ -4,7 +4,7 @@
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
 # 
 # Translators:
-# Abstract Technology <stefania.trabucchi@abstract-technology.de>, 2018
+# Stefania Trabucchi <stefania.trabucchi@abstract-technology.de>, 2018
 # Akif Vohra <akifvohra@gmail.com>, 2016
 # Alexander L. <alexander.lohberg@ufo-style.de>, 2014
 # Alexander L. <alexander.lohberg@ufo-style.de>, 2014,2017
@@ -21,6 +21,7 @@
 # Ron Lucke <ronlucke@googlemail.com>, 2014
 # Rouven Wachhaus <inactive+rwchhs@transifex.com>, 2016
 # Rouven Wachhaus <inactive+rwchhs@transifex.com>, 2016
+# Stefania Trabucchi <stefania.trabucchi@abstract-technology.de>, 2018-2019
 # v4rp1ng <inactive+v4rp1ng@transifex.com>, 2014
 # Андрей Поляков <polyakov.andrey@gmail.com>, 2016
 msgid ""
@@ -28,8 +29,8 @@ msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-29 13:04-0400\n"
-"PO-Revision-Date: 2018-04-24 12:32+0000\n"
-"Last-Translator: Abstract Technology <stefania.trabucchi@abstract-technology.de>\n"
+"PO-Revision-Date: 2019-04-18 13:56+0000\n"
+"Last-Translator: Stefania Trabucchi <stefania.trabucchi@abstract-technology.de>\n"
 "Language-Team: German (Germany) (http://www.transifex.com/open-edx/edx-platform/language/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -532,7 +533,7 @@ msgstr "Mehr Informationen über %(name)s"
 #: openassessment/templates/openassessmentblock/grade/oa_grade_not_started.html:14
 #: openassessment/templates/openassessmentblock/grade/oa_grade_waiting.html:14
 msgid "Your Grade"
-msgstr "Ihre Bewertung"
+msgstr "Deine Benotung"
 
 #: openassessment/templates/openassessmentblock/grade/oa_grade_cancelled.html:19
 #, python-format
@@ -662,7 +663,7 @@ msgstr "Nicht abgeschlossen"
 
 #: openassessment/templates/openassessmentblock/grade/oa_grade_incomplete.html:27
 msgid "You have not completed all the steps of this problem."
-msgstr "Sie haben noch nicht alle Schritte dieser Fragestellung beendet."
+msgstr "Du hast noch nicht alle Schritte dieser Aufgabenstellung abgeschlossen."
 
 #: openassessment/templates/openassessmentblock/grade/oa_grade_not_started.html:16
 msgid "Not Started"
@@ -694,7 +695,7 @@ msgstr "Verfügbare Antworten bewerten"
 msgid ""
 "Grade Available Responses is unavailable. This item is not configured for "
 "Staff Assessment."
-msgstr ""
+msgstr "Diese Bewertung ist ungültig. Dieser Eintrag wird nicht für Mitarbeiter konfiguriert."
 
 #: openassessment/templates/openassessmentblock/instructor_dashboard/oa_listing.html:6
 msgid "Please wait"
@@ -745,20 +746,20 @@ msgstr "Sie haben diese Aufgabe erledigt. Sehen Sie hier Ihre Benotung und pers�
 msgid ""
 "This assignment is in progress. Learner training will close soon. Complete "
 "the learner training step to move on."
-msgstr ""
+msgstr "Diese Aufgabe ist in Bearbeitung. Das Teilnehmer Training wird demnächst beendet. Vervollständigen Sie die folgenden Arbeitsschritte für die Teilnehmer, sodass diese weiterarbeiten können."
 
 #: openassessment/templates/openassessmentblock/message/oa_message_incomplete.html:11
 msgid ""
 "This assignment is in progress. Complete the learner training step to move "
 "on."
-msgstr ""
+msgstr "Diese Aufgabe ist in Bearbeitung. Vervollständigen Sie das Teilnehmer Training, sodass diese weiterarbeiten können."
 
 #: openassessment/templates/openassessmentblock/message/oa_message_incomplete.html:15
 #: openassessment/templates/openassessmentblock/message/oa_message_incomplete.html:33
 msgid ""
 "This assignment is in progress. Check back later when the assessment period "
 "has started."
-msgstr ""
+msgstr "Diese Aufgabe ist in Bearbeitung. Kontrollieren Sie später noch einmal, wenn die Bewertung gestartet ist."
 
 #: openassessment/templates/openassessmentblock/message/oa_message_incomplete.html:20
 #, python-format
@@ -774,7 +775,7 @@ msgid ""
 "\n"
 "                                    This assignment is in progress. You still need to complete the %(start_link)sself assessment%(end_link)s step.\n"
 "                                "
-msgstr ""
+msgstr "\n                                    Diese Aufgabe ist in Bearbeitung. Sie müssen noch die %(start_link)sSelbst Beurteilung%(end_link)s vervollständigen\n                                "
 
 #: openassessment/templates/openassessmentblock/message/oa_message_incomplete.html:38
 #, python-format
@@ -782,7 +783,7 @@ msgid ""
 "\n"
 "                                    This assignment is in progress.%(start_strong)sThe peer assessment step will close soon.%(end_strong)s All submitted peer responses have been assessed. Check back later to see if more learners have submitted responses. You still need to complete the %(start_link)speer assessment%(end_link)s step.\n"
 "                                "
-msgstr ""
+msgstr "\n                                    Diese Aufgabe ist fast fertig.%(start_strong)s Diese Partnerbewertung wird bald geschlossen%(end_strong)s. Alle eingereichten Antworten wurden bewertet. Überprüfe später, ob noch mehr Lernende ihre Antworten gesendet haben, damit Du den %(start_link)s%(end_link)s Peer-Bewertungsschritt bzw. die Partnerbewertung abschließen kannst.\n                                "
 
 #: openassessment/templates/openassessmentblock/message/oa_message_incomplete.html:42
 #, python-format
@@ -790,7 +791,7 @@ msgid ""
 "\n"
 "                                    This assignment is in progress. All submitted peer responses have been assessed. Check back later to see if more learners have submitted responses. You still need to complete the %(start_link)speer assessment%(end_link)s step.\n"
 "                                "
-msgstr ""
+msgstr "\n                                    Diese Aufgabe ist fast fertig, alle eingereichten Antworten wurden bewertet. Überprüfe später, ob noch mehr Lernende ihre Antworten gesendet haben,damit Du den %(start_link)s%(end_link)s Peer-Bewertungsschritt bzw. die Partnerbewertung abschließen kannst.\n                                "
 
 #: openassessment/templates/openassessmentblock/message/oa_message_incomplete.html:46
 #, python-format
@@ -798,7 +799,7 @@ msgid ""
 "\n"
 "                                    This assignment is in progress. %(start_strong)sThe peer assessment step will close soon.%(end_strong)s You still need to complete the %(start_link)speer assessment%(end_link)s step.\n"
 "                                "
-msgstr ""
+msgstr "\n                                    Diese Aufgabe ist in Bearbeitung. %(start_strong)sDie Beurteilung wird bald beendet..%(end_strong)s Sie müssen noch die %(start_link)sGruppen Beurteilung%(end_link)s bearbeiten.\n                                "
 
 #: openassessment/templates/openassessmentblock/message/oa_message_incomplete.html:50
 #, python-format
@@ -806,7 +807,7 @@ msgid ""
 "\n"
 "                                    This assignment is in progress. You still need to complete the %(start_link)speer assessment%(end_link)s step.\n"
 "                                "
-msgstr ""
+msgstr "\n                                   Diese Aufgabe ist in Bearbeitung. Sie müssen noch die %(start_link)sGruppen Beurteilung%(end_link)s bearbeiten.\n                                "
 
 #: openassessment/templates/openassessmentblock/message/oa_message_open.html:7
 #, python-format
@@ -814,7 +815,7 @@ msgid ""
 "\n"
 "                    Assignment submissions will close soon. To receive a grade, first provide a response to the prompt, then complete the steps below the %(start_tag)sYour Response%(end_tag)s field.\n"
 "                "
-msgstr ""
+msgstr "\n                    Bald können Sie hierzu keine Antworten mehr geben. Um eine Benotung zu erhalten, müssen Sie das Eingabefeld  %(start_tag)s%(end_tag)s entsprechend ausfüllen und die darauffolgenden Schritte bearbeiten.\n                "
 
 #: openassessment/templates/openassessmentblock/message/oa_message_open.html:11
 #, python-format
@@ -822,7 +823,7 @@ msgid ""
 "\n"
 "                    This assignment has several steps. In the first step, you'll provide a response to the prompt. The other steps appear below the %(start_tag)sYour Response%(end_tag)s field.\n"
 "                "
-msgstr ""
+msgstr "\n                     Diese Aufgabe beinhaltet mehrere Schritte, welche erst ersichtlich werden, sobald Sie %(start_tag)s das Eingabefeld %(end_tag)s entsprechend ausfüllen.\n                "
 
 #: openassessment/templates/openassessmentblock/message/oa_message_unavailable.html:4
 msgid "Instructions Unavailable"
@@ -837,7 +838,7 @@ msgid ""
 "This assignment has several steps. In the first step, you'll provide a "
 "response to the prompt. The other steps appear below the Your Response "
 "field."
-msgstr ""
+msgstr "Diese Aufgabe besteht aus mehreren Schritten. Im ersten Schritt geben Sie zunächst Ihre Antwort auf die Frage ein. Die anderen Schritte werden unten im Antwortfeld angezeigt."
 
 #: openassessment/templates/openassessmentblock/oa_base.html:36
 msgid "Loading"
@@ -849,7 +850,7 @@ msgstr "Vorschau in LaTeX"
 
 #: openassessment/templates/openassessmentblock/oa_latex_preview.html:10
 msgid "Click to preview your submission in LaTeX."
-msgstr ""
+msgstr "Klicken Sie, um eine Vorschau ihrer Einreichung in LaTeX zu erhalten."
 
 #: openassessment/templates/openassessmentblock/oa_latex_preview.html:15
 msgid "Preview Response"
@@ -861,22 +862,22 @@ msgstr "Kommentare"
 
 #: openassessment/templates/openassessmentblock/oa_submission_answer.html:8
 msgid "The question for this section"
-msgstr ""
+msgstr "Die Frage in diesem Abschnitt"
 
 #: openassessment/templates/openassessmentblock/oa_uploaded_file.html:28
 msgid "View the files associated with this submission:"
-msgstr ""
+msgstr "Schauen Sie sich die Dateien an, welche im Zusammenhang mit dieser Einreichung stehen:"
 
 #: openassessment/templates/openassessmentblock/oa_uploaded_file.html:36
 msgid ""
 "Caution: These files were uploaded by another course learner and have not "
 "been verified, screened, approved, reviewed, or endorsed by the site "
 "administrator. If you access the files, you do so at your own risk.)"
-msgstr ""
+msgstr "Achtung: Diese Dateien wurden von einem anderen teilnehmer hochgeladen und wurden noch nicht von einem Administrator bestätigt, kontrolliert oder angeschaut. Zugriff auf die Dateien auf eigene Gefahr.)"
 
 #: openassessment/templates/openassessmentblock/peer/oa_peer_assessment.html:26
 msgid "Assess Peers"
-msgstr "Partner beurteilen"
+msgstr "Gruppen-Bewertung"
 
 #. Translators: This string displays a date to the user, then tells them the
 #. time until that date.  Example: "available August 13th, 2014 00:00 UTC (in
@@ -887,7 +888,7 @@ msgid ""
 "\n"
 "            <span id=\"oa_step_deadline_peer\" class=\"date ora-datetime\" data-datetime=\"%(start_date)s\" data-string=\"available {date} (in %(time_until)s)\" data-timezone=\"%(user_timezone)s\" data-language=\"%(user_language)s\"></span>\n"
 "            "
-msgstr ""
+msgstr "\n            <span id=\"oa_step_deadline_peer\" class=\"date ora-datetime\" data-datetime=\"%(start_date)s\" data-string=\"available {date} (in %(time_until)s)\" data-timezone=\"%(user_timezone)s\" data-language=\"%(user_language)s\"></span>\n            "
 
 #. Translators: This string displays a date to the user, then tells them the
 #. time until that date.  Example: "due August 13th, 2014 00:00 UTC (in 5 days
@@ -898,7 +899,7 @@ msgid ""
 "\n"
 "            <span id=\"oa_step_deadline_peer\" class=\"date ora-datetime\" data-datetime=\"%(due_date)s\" data-string=\"due {date} (in %(time_until)s)\" data-timezone=\"%(user_timezone)s\" data-language=\"%(user_language)s\"></span>\n"
 "            "
-msgstr ""
+msgstr "\n            <span id=\"oa_step_deadline_peer\" class=\"date ora-datetime\" data-datetime=\"%(due_date)s\" data-string=\"due {date} (in %(time_until)s)\" data-timezone=\"%(user_timezone)s\" data-language=\"%(user_language)s\"></span>\n            "
 
 #: openassessment/templates/openassessmentblock/peer/oa_peer_assessment.html:51
 #, python-format
@@ -906,7 +907,7 @@ msgid ""
 "\n"
 "                    In Progress (%(review_number)s of %(num_must_grade)s)\n"
 "                "
-msgstr ""
+msgstr "\n                    In Bearbeitung (%(review_number)s von %(num_must_grade)s)\n                "
 
 #: openassessment/templates/openassessmentblock/peer/oa_peer_assessment.html:65
 #: openassessment/templates/openassessmentblock/peer/oa_peer_turbo_mode.html:45
@@ -920,7 +921,7 @@ msgstr "Lesen und bewerten Sie die folgende Antwort von einem Ihrer Partner."
 #: openassessment/templates/openassessmentblock/staff_area/oa_staff_override_assessment.html:27
 #: openassessment/templates/openassessmentblock/staff_area/oa_student_info.html:49
 msgid "Associated Files"
-msgstr ""
+msgstr "Zsammenhängende Dateien"
 
 #: openassessment/templates/openassessmentblock/peer/oa_peer_assessment.html:91
 #: openassessment/templates/openassessmentblock/peer/oa_peer_turbo_mode.html:70
@@ -951,7 +952,7 @@ msgid ""
 "The due date for this step has passed. This step is now closed. You can no "
 "longer complete peer assessments or continue with this assignment, and you "
 "will receive a grade of Incomplete."
-msgstr ""
+msgstr "Das Fälligkeitsdatum für diese Aufgabe ist bereits überschritten. Sie können diese Aufgabe nicht weiter bearbeiten. Sie werden entsprechend benotet."
 
 #: openassessment/templates/openassessmentblock/peer/oa_peer_complete.html:13
 msgid "Completed"
@@ -987,7 +988,7 @@ msgstr "\n        Vollständig (%(num_graded)s)\n      "
 msgid ""
 "All submitted peer responses have been assessed. Check back later to see if "
 "more learners have submitted responses."
-msgstr ""
+msgstr "Diese Aufgabe ist fast fertig, alle eingereichten Antworten wurden bewertet. Überprüfe später, ob noch mehr Lernende ihre Antworten gesendet haben."
 
 #: openassessment/templates/openassessmentblock/peer/oa_peer_unavailable.html:16
 #: openassessment/templates/openassessmentblock/response/oa_response_unavailable.html:17
@@ -1004,7 +1005,7 @@ msgid ""
 "\n"
 "          In Progress (%(review_number)s of %(num_must_grade)s)\n"
 "        "
-msgstr ""
+msgstr "\n          In Bearbeitung (%(review_number)s von %(num_must_grade)s)\n        "
 
 #: openassessment/templates/openassessmentblock/peer/oa_peer_waiting.html:37
 msgid ""
@@ -1012,7 +1013,7 @@ msgid ""
 "more learners have submitted responses. You will receive your grade after "
 "you've completed all the steps for this problem and your peers have assessed"
 " your response."
-msgstr ""
+msgstr "Alle verfügbaren Teilnehmer-Antworten wurden bewertet. Kontrollieren Sie später noch einmal, ob weitere Teilnehmer Antworten eingereicht haben. Sie erhalten Ihre Bewertung, nachdem Sie alle Schritte für diese Aufgabestellung abgeschlossen haben und Ihre KollegInnen Ihre Antwort bewertet haben."
 
 #. Translators: This string displays a date to the user, then tells them the
 #. time until that date.  Example: "available August 13th, 2014 (in 5 days and
@@ -1023,7 +1024,7 @@ msgid ""
 "\n"
 "            <span id=\"oa_step_deadline_response\" class=\"date ora-datetime\" data-datetime=\"%(start_date)s\" data-string=\"available {date} (in %(time_until)s)\" data-timezone=\"%(user_timezone)s\" data-language=\"%(user_language)s\"></span>\n"
 "            "
-msgstr ""
+msgstr "\n            <span id=\"oa_step_deadline_response\" class=\"date ora-datetime\" data-datetime=\"%(start_date)s\" data-string=\"available {date} (in %(time_until)s)\" data-timezone=\"%(user_timezone)s\" data-language=\"%(user_language)s\"></span>\n            "
 
 #. Translators: This string displays a date to the user, then tells them the
 #. time until that date.  Example: "due August 13th, 2014 (in 5 days and 45
@@ -1034,7 +1035,7 @@ msgid ""
 "\n"
 "            <span id=\"oa_step_deadline_response\" class=\"date ora-datetime\" data-datetime=\"%(due_date)s\" data-string=\"due {date} (in %(time_until)s)\" data-timezone=\"%(user_timezone)s\" data-language=\"%(user_language)s\"></span>\n"
 "            "
-msgstr ""
+msgstr "\n            <span id=\"oa_step_deadline_response\" class=\"date ora-datetime\" data-datetime=\"%(due_date)s\" data-string=\"due {date} (in %(time_until)s)\" data-timezone=\"%(user_timezone)s\" data-language=\"%(user_language)s\"></span>\n            "
 
 #: openassessment/templates/openassessmentblock/response/oa_response.html:46
 #: openassessment/templates/openassessmentblock/self/oa_self_assessment.html:46
@@ -1043,7 +1044,7 @@ msgstr "In Bearbeitung"
 
 #: openassessment/templates/openassessmentblock/response/oa_response.html:57
 msgid "Enter your response to the prompt."
-msgstr ""
+msgstr "Geben Sie Ihre Antwort ein."
 
 #: openassessment/templates/openassessmentblock/response/oa_response.html:59
 msgid ""
@@ -1062,19 +1063,19 @@ msgstr "Nachdem Sie Ihre Antwort übermittelt haben, können Sie diese nicht meh
 
 #: openassessment/templates/openassessmentblock/response/oa_response.html:75
 msgid "The prompt for this section"
-msgstr ""
+msgstr "Die Aufgabenstellung für diesen Abschnitt."
 
 #: openassessment/templates/openassessmentblock/response/oa_response.html:93
 msgid "Your response (required)"
-msgstr ""
+msgstr "Ihre Antwort (erforderlich)"
 
 #: openassessment/templates/openassessmentblock/response/oa_response.html:95
 msgid "Your response (optional)"
-msgstr ""
+msgstr "Ihre Antwort (optional)"
 
 #: openassessment/templates/openassessmentblock/response/oa_response.html:105
 msgid "Enter your response to the prompt above."
-msgstr ""
+msgstr "Geben Sie Ihre Antwort in das Eingabefeld oben ein."
 
 #: openassessment/templates/openassessmentblock/response/oa_response.html:119
 msgid "We could not save your progress"
@@ -1090,7 +1091,7 @@ msgstr "Ihr Einreichungsstatus"
 
 #: openassessment/templates/openassessmentblock/response/oa_response.html:142
 msgid "We could not upload files"
-msgstr ""
+msgstr "Es konnten keine Dateien hochgeladen werden"
 
 #: openassessment/templates/openassessmentblock/response/oa_response.html:146
 msgid "Select a file to upload for this submission."
@@ -1098,11 +1099,11 @@ msgstr "Wählen Sie eine Datei zum Hochladen für diese Einreichung"
 
 #: openassessment/templates/openassessmentblock/response/oa_response.html:148
 msgid "Upload files"
-msgstr ""
+msgstr "Hochladen von Dateien"
 
 #: openassessment/templates/openassessmentblock/response/oa_response.html:157
 msgid "You may continue to work on your response until you submit it."
-msgstr "Sie können solange an Ihrer Antwort arbeiten, bis Sie diese einreichen. "
+msgstr "Sie können so lange an Ihrer Antwort arbeiten, bis Sie diese einreichen. "
 
 #: openassessment/templates/openassessmentblock/response/oa_response.html:164
 msgid "We could not submit your response"
@@ -1114,7 +1115,7 @@ msgstr "Antwort einreichen, um fortzufahren. "
 
 #: openassessment/templates/openassessmentblock/response/oa_response_cancelled.html:34
 msgid "Your submission was cancelled. "
-msgstr ""
+msgstr "Ihr Eintrag wurde gelöscht"
 
 #: openassessment/templates/openassessmentblock/response/oa_response_cancelled.html:37
 #, python-format
@@ -1130,7 +1131,7 @@ msgid ""
 "\n"
 "                               Your submission was cancelled on %(removed_datetime)s\n"
 "                            "
-msgstr ""
+msgstr "\n                               Ihr Eintrag wurde auf %(removed_datetime)s gelöscht\n                            "
 
 #: openassessment/templates/openassessmentblock/response/oa_response_cancelled.html:48
 #, python-format
@@ -1152,7 +1153,7 @@ msgid ""
 "longer submit a response or continue with this problem, and you will receive"
 " a grade of Incomplete. If you saved but did not submit a response, the "
 "response appears in the course records."
-msgstr ""
+msgstr "Das Fälligkeitsdatum für diese Aufgabe ist bereits überschritten. Sie können diese Aufgabe nicht weiter bearbeiten. Sie werden entsprechend benotet. Alles gespeicherten aber nicht eingereichten Antworten werden in Ihren Aufzeichnungen erscheinen."
 
 #: openassessment/templates/openassessmentblock/response/oa_response_graded.html:20
 #: openassessment/templates/openassessmentblock/response/oa_response_submitted.html:20
@@ -1167,18 +1168,18 @@ msgstr "Abgeschlossen"
 #: openassessment/templates/openassessmentblock/response/oa_response_submitted.html:51
 #: openassessment/templates/openassessmentblock/self/oa_self_assessment.html:57
 msgid "Your response"
-msgstr ""
+msgstr "Ihre Antwort"
 
 #: openassessment/templates/openassessmentblock/response/oa_response_graded.html:33
 #: openassessment/templates/openassessmentblock/response/oa_response_submitted.html:54
 msgid "Your Uploaded Files"
-msgstr ""
+msgstr "Von Ihnen hochgeladene Dateien"
 
 #: openassessment/templates/openassessmentblock/response/oa_response_submitted.html:32
 msgid ""
 "Your response has been submitted. You will receive your grade after all "
 "steps are complete and your response is fully assessed."
-msgstr ""
+msgstr "Ihre Antwort wurde abgesendet. Sie erhalten eine Benotung nachdem Sie alle Schritte abgeschlossen haben und Ihr Antworten bewertet wurden."
 
 #: openassessment/templates/openassessmentblock/response/oa_response_submitted.html:34
 #, python-format
@@ -1217,7 +1218,7 @@ msgid ""
 "\n"
 "               <span id=\"oa_step_deadline_self\" class=\"date ora-datetime\" data-datetime=\"%(start_date)s\" data-string=\"available {date} (in %(time_until)s)\" data-timezone=\"%(user_timezone)s\" data-language=\"%(user_language)s\"></span>\n"
 "           "
-msgstr ""
+msgstr "\n               <span id=\"oa_step_deadline_self\" class=\"date ora-datetime\" data-datetime=\"%(start_date)s\" data-string=\"available {date} (in %(time_until)s)\" data-timezone=\"%(user_timezone)s\" data-language=\"%(user_language)s\"></span>\n           "
 
 #. Translators: This string displays a date to the user, then tells them the
 #. time until that date.  Example: "due August 13th, 2014 (in 5 days and 45
@@ -1228,7 +1229,7 @@ msgid ""
 "\n"
 "               <span id=\"oa_step_deadline_self\" class=\"date ora-datetime\" data-datetime=\"%(due_date)s\" data-string=\"due {date} (in %(time_until)s)\" data-timezone=\"%(user_timezone)s\" data-language=\"%(user_language)s\"></span>\n"
 "           "
-msgstr ""
+msgstr "\n               <span id=\"oa_step_deadline_self\" class=\"date ora-datetime\" data-datetime=\"%(due_date)s\" data-string=\"due {date} (in %(time_until)s)\" data-timezone=\"%(user_timezone)s\" data-language=\"%(user_language)s\"></span>\n           "
 
 #: openassessment/templates/openassessmentblock/self/oa_self_assessment.html:78
 msgid "Submit your assessment"
@@ -1239,7 +1240,7 @@ msgid ""
 "The due date for this step has passed. This step is now closed. You can no "
 "longer complete a self assessment or continue with this assignment, and you "
 "will receive a grade of Incomplete."
-msgstr ""
+msgstr "Das Fälligkeitsdatum für diese Aufgabe ist bereits überschritten. Sie können diese Aufgabe nicht weiter bearbeiten. Sie werden entsprechend benotet."
 
 #: openassessment/templates/openassessmentblock/staff/oa_staff_grade.html:13
 #: openassessment/xblock/grade_mixin.py:348
@@ -1329,7 +1330,7 @@ msgstr "Antwort des Teilnehmers"
 #: openassessment/templates/openassessmentblock/staff_area/oa_staff_override_assessment.html:24
 #: openassessment/templates/openassessmentblock/staff_area/oa_student_info.html:46
 msgid "The learner's response to the prompt above"
-msgstr ""
+msgstr "Die, in das Eingabefeld eingegebene Antwort des Teilnehmers."
 
 #: openassessment/templates/openassessmentblock/staff_area/oa_staff_grade_learners_assessment.html:47
 #: openassessment/templates/openassessmentblock/staff_area/oa_staff_override_assessment.html:46
@@ -1454,7 +1455,7 @@ msgid ""
 "The learner's submission has been removed from peer assessment. The learner "
 "receives a grade of zero unless you delete the learner's state for the "
 "problem to allow them to resubmit a response."
-msgstr ""
+msgstr "Die Einreichung des Teilnehmers wurden von der Partnerbewertung entfernt. Der Teilnehmer erhält somit 0 Punkte. Sie können dem Teilnehmer auch erlauben, die Aufgabe zu Wiederholen. "
 
 #: openassessment/templates/openassessmentblock/staff_area/oa_student_info.html:151
 msgid "The problem has not been started."
@@ -1524,7 +1525,7 @@ msgstr "Gesamte Rückmeldungen"
 
 #: openassessment/templates/openassessmentblock/student_training/student_training.html:16
 msgid "Learn to Assess Responses"
-msgstr "So bewerten Sie eine Antwort"
+msgstr "Bewerte die Antworten von anderen Lernenden."
 
 #: openassessment/templates/openassessmentblock/student_training/student_training.html:25
 #, python-format
@@ -1532,7 +1533,7 @@ msgid ""
 "\n"
 "                      In Progress (%(current_progress_num)s of %(training_available_num)s)\n"
 "                  "
-msgstr ""
+msgstr "\n                      In Bearbeitung (%(current_progress_num)s von %(training_available_num)s)\n                  "
 
 #. Translators: This string displays a date to the user, then tells them the
 #. time until that date.  Example: "available August 13th, 2014 (in 5 days and
@@ -1543,7 +1544,7 @@ msgid ""
 "\n"
 "            <span id=\"oa_step_deadline\" class=\"date ora-datetime\" data-datetime=\"%(start_date)s\" data-string=\"available {date} (in %(time_until)s)\" data-timezone=\"%(user_timezone)s\" data-language=\"%(user_language)s\"></span>\n"
 "            "
-msgstr ""
+msgstr "\n            <span id=\"oa_step_deadline\" class=\"date ora-datetime\" data-datetime=\"%(start_date)s\" data-string=\"available {date} (in %(time_until)s)\" data-timezone=\"%(user_timezone)s\" data-language=\"%(user_language)s\"></span>\n            "
 
 #. Translators: This string displays a date to the user, then tells them the
 #. time until that date.  Example: "due August 13th, 2014 (in 5 days and 45
@@ -1554,12 +1555,12 @@ msgid ""
 "\n"
 "            <span id=\"oa_step_deadline\" class=\"date ora-datetime\" data-datetime=\"%(due_date)s\" data-string=\"due {date} (in %(time_until)s)\" data-timezone=\"%(user_timezone)s\" data-language=\"%(user_language)s\"></span>\n"
 "            "
-msgstr ""
+msgstr "\n            <span id=\"oa_step_deadline\" class=\"date ora-datetime\" data-datetime=\"%(due_date)s\" data-string=\"due {date} (in %(time_until)s)\" data-timezone=\"%(user_timezone)s\" data-language=\"%(user_language)s\"></span>\n            "
 
 #: openassessment/templates/openassessmentblock/student_training/student_training.html:56
 #: openassessment/templates/openassessmentblock/student_training/student_training.html:64
 msgid "Learning to Assess Responses"
-msgstr "So bewerten Sie eine Antwort"
+msgstr "Bewerte die Antworten von anderen Lernenden."
 
 #: openassessment/templates/openassessmentblock/student_training/student_training.html:59
 msgid ""
@@ -1579,7 +1580,7 @@ msgstr "Ihre Bewertung für diese Antwort weicht von der Bewertung des Dozenten 
 
 #: openassessment/templates/openassessmentblock/student_training/student_training.html:74
 msgid "The response to the prompt above:"
-msgstr ""
+msgstr "Die in das Eingabefeld eingegebene Antwort: "
 
 #: openassessment/templates/openassessmentblock/student_training/student_training.html:96
 msgid "Selected Options Agree"
@@ -1611,7 +1612,7 @@ msgid ""
 "The due date for this step has passed. This step is now closed. You can no "
 "longer continue with this assignment, and you will receive a grade of "
 "Incomplete."
-msgstr ""
+msgstr "Das Fälligkeitsdatum für diese Aufgabe ist bereits überschritten. Sie können diese Aufgabe nicht weiter bearbeiten. Sie werden entsprechend benotet."
 
 #: openassessment/templates/openassessmentblock/student_training/student_training_error.html:18
 msgid "Error Loading Learner Training Examples"
@@ -1619,7 +1620,7 @@ msgstr "Fehler beim Laden der Lernerübungsbeispiele"
 
 #: openassessment/templates/openassessmentblock/student_training/student_training_error.html:21
 msgid "The Learner Training Step of this assignment could not be loaded."
-msgstr ""
+msgstr "Das Teilnehmer Training in dieser Aufgabe konnte nicht geladen werden."
 
 #: openassessment/xblock/data_conversion.py:244
 msgid "You must provide options selected in the assessment."
@@ -1788,11 +1789,11 @@ msgstr "Sie haben keine Berechtigung um auf die ORA staff area zu zugreifen."
 
 #: openassessment/xblock/staff_area_mixin.py:67
 msgid "You do not have permission to access ORA learner information."
-msgstr ""
+msgstr "Sie haben keine Berechtigung ORA Teilnehmer Informationen einzusehen."
 
 #: openassessment/xblock/staff_area_mixin.py:68
 msgid "You do not have permission to access ORA staff grading."
-msgstr ""
+msgstr "Sie haben keine Berechtigung ORA Mitarbeiter Benotung einzusehen."
 
 #: openassessment/xblock/staff_area_mixin.py:177
 msgid "Error getting learner information."
@@ -1800,7 +1801,7 @@ msgstr "Fehler beim Laden der Lernerinformationen."
 
 #: openassessment/xblock/staff_area_mixin.py:217
 msgid "Error loading the checked out learner response."
-msgstr ""
+msgstr "Fehler beim Laden der geprüften Lernantwort."
 
 #: openassessment/xblock/staff_area_mixin.py:219
 msgid "No other learner responses are available for grading at this time."
@@ -1823,7 +1824,7 @@ msgid ""
 "The learner submission has been removed from peer assessment. The learner "
 "receives a grade of zero unless you delete the learner's state for the "
 "problem to allow them to resubmit a response."
-msgstr ""
+msgstr "Die Einreichung des Teilnehmers wurden von der Partnerbewertung entfernt. Der Teilnehmer erhält somit 0 Punkte. Sie können dem Teilnehmer auch erlauben, die Aufgabe zu Wiederholen. "
 
 #: openassessment/xblock/staff_assessment_mixin.py:39
 msgid "The submission ID of the submission being assessed was not found."
@@ -1924,11 +1925,11 @@ msgstr "Diese Antwort wurde nicht übermittelt."
 
 #: openassessment/xblock/submission_mixin.py:222
 msgid "Files descriptions could not be saved."
-msgstr ""
+msgstr "Dateibeschreibung konnte nicht gespeichert werden."
 
 #: openassessment/xblock/submission_mixin.py:226
 msgid "Files descriptions were not submitted."
-msgstr ""
+msgstr "Dateibeschreibungen wurden nicht eingereicht."
 
 #: openassessment/xblock/submission_mixin.py:290
 msgid "There was an error uploading your file."
@@ -1994,7 +1995,7 @@ msgstr "Jede Beispielantwort für das Lernerraining muss unterschiedlich sein."
 
 #: openassessment/xblock/validation.py:156
 msgid "The \"required\" value must be true if staff assessment is the only step."
-msgstr ""
+msgstr "Die \"erforderlichen\" Werte müssen verifiziert sein."
 
 #: openassessment/xblock/validation.py:160
 msgid ""
@@ -2042,7 +2043,7 @@ msgstr "Punktewerte können nach Veröffentlichung der Fragestellung nicht mehr 
 
 #: openassessment/xblock/validation.py:289
 msgid "Learner training must have at least one training example."
-msgstr ""
+msgstr "Teilnehmer Training muss mindestens eine Trainingsbeispiel beinhalten."
 
 #: openassessment/xblock/validation.py:353
 msgid "Leaderboard number is invalid."
