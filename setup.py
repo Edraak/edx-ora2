@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
+
 
 def is_requirement(line):
     """
@@ -33,7 +34,7 @@ def load_requirements(*requirements_paths):
 
 setup(
     name='ora2',
-    version='1.1.13',
+    version='2.1.18',
     author='edX',
     url='http://github.com/edx/edx-ora2',
     description='edx-ora2',
@@ -45,9 +46,9 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: Python',
     ],
-    packages=find_packages(exclude=['*.test', '*.tests']),
+    packages=find_packages(include=['openassessment*'], exclude=['*.test', '*.tests']),
     include_package_data=True,
-    install_requires=load_requirements('requirements/base.txt', 'requirements/wheels.txt'),
+    install_requires=load_requirements('requirements/base.txt', "requirements/django.txt"),
     tests_require=load_requirements('requirements/test.txt'),
     entry_points={
         'xblock.v1': [

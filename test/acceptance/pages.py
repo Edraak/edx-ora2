@@ -5,7 +5,7 @@ Page objects for UI-level acceptance tests.
 import os
 
 from bok_choy.page_object import PageObject
-from bok_choy.promise import EmptyPromise, BrokenPromise
+from bok_choy.promise import BrokenPromise, EmptyPromise
 
 ORA_SANDBOX_URL = os.environ.get('ORA_SANDBOX_URL')
 
@@ -37,6 +37,15 @@ class BaseAssessmentPage(PageObject):
             base=ORA_SANDBOX_URL,
             loc=self._problem_location
         )
+
+    def get_sr_html(self):
+        return self.q(css='.sr.reader-feedback').html
+
+    def confirm_feedback_text(self, text):
+        def is_text_in_feedback():
+            return text in self.get_sr_html()[0]
+
+        self.wait_for(is_text_in_feedback, 'Waiting for %s, in %s' % (text, self.q(css='.sr.reader-feedback').html[0]))
 
 
 class MultipleAssessmentPage(BaseAssessmentPage):
@@ -76,7 +85,6 @@ class OpenAssessmentPage(BaseAssessmentPage):
         """
         return ".vert-{vertical_index}".format(vertical_index=self.vertical_index)
 
-
     def submit(self, button_css=".action--submit"):
         """
         Click the submit button on the page.
@@ -85,7 +93,7 @@ class OpenAssessmentPage(BaseAssessmentPage):
         """
         submit_button_selector = self._bounded_selector(button_css)
         EmptyPromise(
-            lambda: False == any(self.q(css=submit_button_selector).attrs('disabled')),
+            lambda: not any(self.q(css=submit_button_selector).attrs('disabled')),
             "Submit button is enabled."
         ).fulfill()
 
@@ -150,6 +158,38 @@ class SubmissionPage(OpenAssessmentPage):
         self.wait_for_element_visibility(".submission__answer__upload", "File select button is present")
         self.q(css=".submission__answer__upload").results[0].send_keys(file_path_name)
 
+    def add_file_description(self, file_num, description):
+        """
+        Submit a description for some file.
+
+        Args:
+          file_num (integer): file number
+          description (string): file description
+        """
+        textarea_element = self._bounded_selector("textarea.file__description__%d" % file_num)
+        self.wait_for_element_visibility(textarea_element, "Textarea is present")
+        self.q(css=textarea_element).fill(description)
+
+    @property
+    def upload_file_button_is_enabled(self):
+        """
+        Check if 'Upload files' button is enabled
+
+        Returns:
+            bool
+        """
+        return self.q(css="button.file__upload")[0].is_enabled()
+
+    @property
+    def upload_file_button_is_disabled(self):
+        """
+        Check if 'Upload files' button is disabled
+
+        Returns:
+            bool
+        """
+        return self.q(css="button.file__upload").attrs('disabled') == ['true']
+
     def upload_file(self):
         """
         Upload the selected file
@@ -188,14 +228,15 @@ class SubmissionPage(OpenAssessmentPage):
         return self.q(css="div.upload__error > div.message--error").visible
 
     @property
-    def has_file_uploaded(self):
+    def have_files_uploaded(self):
         """
-        Check whether file is successfully uploaded
+        Check whether files were successfully uploaded
 
         Returns:
             bool
         """
-        return self.q(css=".submission__custom__upload").visible
+        self.wait_for_element_visibility('.submission__custom__upload', 'Uploaded files block is presented')
+        return self.q(css=".submission__answer__files").visible
 
 
 class AssessmentMixin(object):
@@ -232,6 +273,7 @@ class AssessmentMixin(object):
         def criterion_selected():
             for criterion_num, option_num in enumerate(options_selected):
                 sel = selector(criterion_num, option_num)
+                self.wait_for_element_visibility(self._bounded_selector(sel), "Criterion option visible")
                 if not self.q(css=self._bounded_selector(sel))[0].is_selected():
                     return False
             return True
@@ -244,7 +286,7 @@ class AssessmentMixin(object):
         attempts = 0
         while not criterion_selected() and attempts < 5:
             select_criterion()
-            attempts+=1
+            attempts += 1
 
         self.submit_assessment()
         return self
@@ -310,14 +352,6 @@ class AssessmentPage(OpenAssessmentPage, AssessmentMixin):
             assessment_type=self._assessment_type
         )
         return self.q(css=css_class).is_present()
-
-    @property
-    def is_on_top(self):
-        # TODO: On top behavior needs to be better defined. It is defined here more accurately as "near-top".
-        # pos = self.browser.get_window_position()
-        # return pos['y'] < 100
-        # self.wait_for_element_visibility(".chapter.is-open", "Chapter heading is on visible", timeout=10)
-        return self.q(css=".chapter.is-open").visible
 
     @property
     def response_text(self):
@@ -661,14 +695,20 @@ class StaffAreaPage(OpenAssessmentPage, AssessmentMixin):
         self.q(css=student_input_css).fill(username)
         submit_button = self.q(css=self._bounded_selector(".action--submit-username"))
         submit_button.first.click()
-        self.wait_for_element_visibility(self._bounded_selector(".staff-info__student__report"), "Student report is present")
+        self.wait_for_element_visibility(
+            self._bounded_selector(".staff-info__student__report"),
+            "Student report is present"
+        )
 
     def expand_staff_grading_section(self):
         """
         Clicks the staff grade control to expand staff grading section for use in staff required workflows.
         """
         self.q(css=self._bounded_selector(".staff__grade__show-form")).first.click()
-        self.wait_for_element_visibility(".staff-full-grade__assessment__rubric__question--0", "staff grading is present")
+        self.wait_for_element_visibility(
+            ".staff-full-grade__assessment__rubric__question--0",
+            "staff grading is present"
+        )
 
     @property
     def available_checked_out_numbers(self):
@@ -684,7 +724,8 @@ class StaffAreaPage(OpenAssessmentPage, AssessmentMixin):
 
     def verify_available_checked_out_numbers(self, expected_value):
         """
-        Waits until the expected value for available and checked out numbers appears. If it does not appear, fails the test.
+        Waits until the expected value for available and checked out numbers appears. If it does not appear, fails the
+        test.
 
         expected_value should be a tuple as described in the available_checked_out_numbers property above.
         """
@@ -829,7 +870,9 @@ class StaffAreaPage(OpenAssessmentPage, AssessmentMixin):
 
         Returns: the text present in "Overall Feedback"
         """
-        return self.q(css=self._bounded_selector(".staff-info__{} .student__answer__display__content".format(section))).text[0]
+        return self.q(
+            css=self._bounded_selector(".staff-info__{} .student__answer__display__content".format(section))
+        ).text[0]
 
     def _get_table_text(self, selector):
         """
