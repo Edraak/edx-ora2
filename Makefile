@@ -57,7 +57,7 @@ detect_changed_source_translations:
 
 # pull translations from Transifex
 pull_translations:
-	cd ./openassessment/ && tx pull -af --mode reviewed --minimum-perc=1
+	cd ./openassessment/ && tx pull -af --minimum-perc=1
 
 # push source translation files (.po) to Transifex
 push_translations:
