@@ -76,7 +76,7 @@
       }
 
       .fa-caret-right:before {
-        @include transform(rotate(bidi-rotate-angle(0deg)));
+        @include transform(rotate(0deg));
       }
     }
   }
@@ -454,7 +454,7 @@
     @include transition(color $tmg-f2 ease-in);
     .icon {
       @include transition(all $tmg-f2 ease-in-out 0s);
-      @include transform(rotate(bidi-rotate-angle(0deg)));
+      @include transform(rotate(0deg));
     }
 
     &.is--initially--collapsed  {
@@ -465,7 +465,7 @@
 
     &.is--showing {
       .ui-slidable .icon {
-        @include transform(rotate(bidi-rotate-angle(90deg)));
+        @include transform(rotate(90deg));
         @include transform-origin(50% 50%);
       }
 
@@ -473,7 +473,7 @@
         &:not(.is--showing) {
           .icon {
             @include transition(all $tmg-f2 ease-in-out 0s);
-            @include transform(rotate(bidi-rotate-angle(0deg)));
+            @include transform(rotate(0deg));
           }
         }
       }
